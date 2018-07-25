@@ -1,8 +1,11 @@
 const {app, BrowserWindow} = require('electron');
 
 function createWindow () {
-	win = new BrowserWindow({ width: 800, height: 600 });
-	win.loadFile('index.html');
+	var BrowserWindowArray = [];
+	for (var i = 0; i < 5; i++) {
+		BrowserWindowArray.push(new BrowserWindow({ width: 800, height: 600 }))
+		BrowserWindowArray[i].loadURL('https://test.topspeedgolf.com/');
+	}
 }
 
 app.on('ready', createWindow);
